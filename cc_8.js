@@ -155,7 +155,7 @@ function createcarttracker() {
 
     return function (itemprice) {
         total += itemprice
-        console.log(`Item added: $${itemprice}. Total: $${total}`)
+        console.log(`Item added: $${itemprice}. Total Cart Value: $${total}`)
         return total
     };
 }
@@ -164,6 +164,31 @@ let carttracker = createcarttracker();
 
 // Console-logging the function to track the price and total of the cart
 
-carttracker(100)                                // Output: Item added: $100. Total: $100 
-carttracker(200)                                // Output: Item added: $200. Total: $300
-carttracker(500)                                // Output: Item added: $500. Total: $800
+carttracker(100)                                // Output: Item added: $100. Total Cart Value: $100 
+carttracker(200)                                // Output: Item added: $200. Total Cart Value: $300
+carttracker(500)                                // Output: Item added: $500. Total Cart Value: $800
+
+
+
+
+
+// Task 8 - Recursion in JavaScript (Scenario: Savings Growth Projection)
+
+// Setting up the recursion function to calulate savings
+
+function calculatesavings(years, amount) {
+    if (years === 10) {
+        return amount;
+    }
+    
+    return calculatesavings(years + 1, amount * 1.05);
+}
+
+let initialamount = 1000
+let finalamount = calculatesavings(0, initialamount);
+
+
+// Console-logging the results to calculate savings
+
+console.log(`Savings after 10 years: $${calculatesavings(8, 1000)}`)                // Output: Savings after 10 years: $1102.50
+console.log(`Savings after 10 years: $${calculatesavings(5, 5000)}`)                // Output: Savings after 10 yeras: 6381.40
