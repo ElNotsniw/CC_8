@@ -117,3 +117,28 @@ function calculateloanpayment(principal, rate, time) {
 
 console.log(`Loan Payment: $${calculateloanpayment(1000, 0.05, 2)}`)
 console.log(`Loan Payment: $${calculateloanpayment(5000, 0.07, 3)}`)
+
+
+
+
+
+// Task 6 - Higher-Order Functions (Scenario: Identifying Large Transactions)
+
+// Declaring an array with values and setting up a higher-order function
+
+let transactions = [200, 1500, 3200, 800, 2500]
+
+function filterlargetransactions(transactions, filterfunction) {
+    return transactions.filter(filterfunction)
+}
+
+function isabove1000(transaction) {
+    return transaction > 1000;
+}
+
+
+let largetransactions = filterlargetransactions(transactions, isabove1000);
+
+// Console-log the function with the values that are above 1000
+
+console.log(`Large Transactions: ${largetransactions}`)                // Large Transactions: 1500,3200,2500
