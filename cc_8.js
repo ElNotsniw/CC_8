@@ -99,3 +99,21 @@ function calculaterentalcost(days, cartype, insurance = false) {
 
 console.log(`Total Cost to Rent: $${calculaterentalcost(3, "Economy", true)}`)              // Output: Total Cost to Rent: $180
 console.log(`Total Cost to Rent: $${calculaterentalcost(5, "Luxury", false)}`)              // Output: Total Cost to Rent: $500
+
+
+
+
+
+// Task 5 - Returning Values (Scenario: Loan Payment Calculation)
+
+// Setting up the function to calculate loan payment
+
+function calculateloanpayment(principal, rate, time) {
+    let totalpayment = principal + (principal * rate * time);
+    return totalpayment
+}
+
+// Console-logging the function and declaring values
+
+console.log(`Loan Payment: $${calculateloanpayment(1000, 0.05, 2)}`)
+console.log(`Loan Payment: $${calculateloanpayment(5000, 0.07, 3)}`)
