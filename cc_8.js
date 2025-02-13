@@ -141,4 +141,29 @@ let largetransactions = filterlargetransactions(transactions, isabove1000);
 
 // Console-log the function with the values that are above 1000
 
-console.log(`Large Transactions: ${largetransactions}`)                // Large Transactions: 1500,3200,2500
+console.log(`Large Transactions: ${largetransactions}`)                // Output: Large Transactions: 1500,3200,2500
+
+
+
+
+// Task 7 - Closures (Scenario: Shopping Cart Tracker)
+
+// Setting up a function to track the cart
+
+function createcarttracker() {
+    let total = 0
+
+    return function (itemprice) {
+        total += itemprice
+        console.log(`Item added: $${itemprice}. Total: $${total}`)
+        return total
+    };
+}
+
+let carttracker = createcarttracker();
+
+// Console-logging the function to track the price and total of the cart
+
+carttracker(100)                                // Output: Item added: $100. Total: $100 
+carttracker(200)                                // Output: Item added: $200. Total: $300
+carttracker(500)                                // Output: Item added: $500. Total: $800
